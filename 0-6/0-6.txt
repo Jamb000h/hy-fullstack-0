@@ -1,0 +1,24 @@
+kayttaja->selain:
+note left of selain:
+Käyttäjä kirjoittaa tekstin syötekenttään
+ja painaa "Talleta"
+end note
+note right of selain:
+lomakkeen onsubmit-event handler käynnistää
+ja suorittaa oman callbackinsa
+oletustoiminnallisuuden sijasta
+end note
+note right of selain:
+Muistiinpano lisätään muistiinpanojen listaan
+ja muistiinpanot renderöidään uudelleen,
+syöttökenttä tyhjennetään ja muistiinpano
+lähetetään palvelimelle
+end note
+selain->palvelin: POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+note left of palvelin:
+Palvelin lisää muistiinpanon muistiinpanojen listaan
+end note
+note left of palvelin
+Palvelin lopettaa suorituksen
+end note
+palvelin->selain: status 201, {"message":"note created"}
