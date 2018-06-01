@@ -1,6 +1,6 @@
 kayttaja->selain:
 note left of selain:
-Käyttäjä navigoin URL:iin
+Käyttäjä navigoi URL:iin
 https://fullstack-exampleapp.herokuapp.com/notes
 end note
 selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
