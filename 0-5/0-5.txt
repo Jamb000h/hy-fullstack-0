@@ -1,0 +1,30 @@
+kayttaja->selain:
+note left of selain:
+Käyttäjä navigoi URL:iin
+https://fullstack-exampleapp.herokuapp.com/spa
+end note
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa
+note left of palvelin:
+Palautetaan sivun staattinen HTML
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin->selain: status 200, main.css
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa.js
+palvelin->selain: status 200, spa.js
+note right of selain:
+Selain lukee spa.js-tiedoston
+ja luo event handlerin onreadystatechange xhttp:lle
+end note
+note right of selain:
+xhttp tekee AJAX-kutsun
+end note
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin->selain: status 200, data.json
+note right of selain:
+xhttp huomaa että AJAX-kutsu on valmis
+ja muuttaa spa.js-tiedoston luoman notes-muuttujan arvoksi
+AJAX-kutsusta palautuneen listan muistiinpanoja
+minkä jälkeen kutsutaan funktiota joka renderöi
+listan muistiinpanoja uudelleen
+end note
